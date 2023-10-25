@@ -10,11 +10,11 @@
     </div>
   </div>
 
-    <div class="container mt-10 relative">
-      <img src="@/assets/img/lunette-presentation.jpg" class="w-screen" alt="Image de présentation">
-      <div class="pt-10 ml-10 absolute top-0 left-0">
-        <p class="text-3xl font-bold font-palanquin text-bleufonce mb-2">Personnaliser facilement vos lunettes !</p>
-        <RouterLink class="font-montserrat bg-bleufonce text-white px-10 py-3 rounded-md" to="/personnalisation">Découvrir</RouterLink>
+    <div class="relative">
+      <img src="@/assets/img/lunette-presentation.jpg" class="w-screen h-screen object-cover" alt="Image de présentation">
+      <div class="absolute top-0 left-0 w-screen h-screen flex flex-col justify-start items-start p-10">
+        <p class="text-3xl font-bold font-palanquin text-bleufonce mb-2 mt-10">Personnaliser facilement vos lunettes !</p>
+        <router-link class="font-montserrat bg-bleufonce text-white px-10 py-3 rounded-md" to="/personnalisation">Découvrir</router-link>
       </div>
     </div>
 
@@ -87,6 +87,14 @@
     </div>
 
 </template>
+
+<style scoped>
+.full-screen {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+</style>
 
 <script setup>
 import MapView from '../components/MapView.vue';
