@@ -62,8 +62,6 @@ setTimeout(
     }, 5000
 )
 
-//Ajouter une popup
-marker2.bindPopup('TaVue')
 }) // Fin de OnMounted
 
 </script>
