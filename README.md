@@ -6,6 +6,6 @@ Lien maquette Figma : https://www.figma.com/file/9sjbTAAGqEKSITcxdyi4x4/SAE_301_
 
 Admin log Pocketbase :
 
-Nom d'utilisateur : abdallah.makhoul@univ-fcomte.fr
+- Nom d'utilisateur : abdallah.makhoul@univ-fcomte.fr
 
-Mot de passe : adminsae301
+- Mot de passe : adminsae301
