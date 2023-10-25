@@ -14,7 +14,7 @@
             <h3 class="font-montserrat font-medium">Lyon Lumière - 80 €</h3>
             <p class="font-nunito text-sm mt-5">"Lyon Lumière" est une paire de lunettes qui capture la beauté de la lumière lyonnaise. Ces lunettes unisexes allient un design minimaliste à une touche de sophistication. Fabriquées en France, elles incarnent l'artisanat de qualité et offrent un confort visuel inégalé.</p>
           </div>
-          <RouterLink to="/personnalisation" class="font-montserrat bg-bleufonce text-white px-3 py-1 rounded-md self-start mt-5">
+          <RouterLink to="/personnalisation" class="font-montserrat bg-bleufonce hover:bg-bleu text-white px-3 py-1 rounded-md self-start mt-5">
             Personnaliser</RouterLink>
         </div>
       </div>
@@ -29,7 +29,7 @@
         <p class="font-nunito text-sm mt-5">Les lunettes "Parisian Chic" incarnent l'élégance intemporelle de la mode parisienne. Leur design épuré et raffiné évoque le charme de la capitale française, tandis que la fabrication artisanale en France assure une qualité exceptionnelle. Avec "Parisian Chic", vous porterez l'essence de la mode parisienne à chaque instant.</p>
       </div>
  
-      <RouterLink to="/personnalisation" class="font-montserrat bg-bleufonce text-white px-3 py-1 rounded-md self-start mt-5">
+      <RouterLink to="/personnalisation" class="font-montserrat bg-bleufonce hover:bg-bleu text-white px-3 py-1 rounded-md self-start mt-5">
         Personnaliser
       </RouterLink>
     </div>
@@ -46,7 +46,7 @@
         <p class="font-nunito text-sm mt-5">Les "Lunettes d'Orsay" sont une ode à l'art et à la culture française. Inspirées par le célèbre musée d'Orsay à Paris, ces lunettes unisexes allient une esthétique contemporaine à des détails classiques. Elles sont conçues pour les esprits créatifs qui apprécient l'art de voir et d'être vus.</p>
       </div>
    
-      <RouterLink to="/personnalisation" class="font-montserrat bg-bleufonce text-white px-3 py-1 rounded-md self-start mt-5">
+      <RouterLink to="/personnalisation" class="font-montserrat bg-bleufonce hover:bg-bleu text-white px-3 py-1 rounded-md self-start mt-5">
         Personnaliser
       </RouterLink>
     </div>
@@ -62,7 +62,7 @@
               <h3 class="font-montserrat font-medium">Bordeaux Vision - 105 €</h3>
               <p class="font-nunito text-sm mt-5">"Bordeaux Vision" incarne la sophistication des vins de Bordeaux dans une paire de lunettes. Leur design élégant et épuré reflète le raffinement de la région bordelaise. Fabriquées en France, ces lunettes unisexes vous offrent une vision claire tout en étant un accessoire de style incontournable.</p>
             </div>
-            <RouterLink to="/personnalisation" class="font-montserrat bg-bleufonce text-white px-3 py-1 rounded-md self-start mt-5">
+            <RouterLink to="/personnalisation" class="font-montserrat bg-bleufonce hover:bg-bleu text-white px-3 py-1 rounded-md self-start mt-5">
             Personnaliser
             </RouterLink>
           </div>

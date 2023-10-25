@@ -65,17 +65,17 @@
     <div class="flex flex-wrap overflow-hidden md:px-5 mt-12 justify-between mx-32">
       <div class="font-montserrat bg-blanc p-12 w-120 text-center space-y-4">
         <img class="w-60 h-30" src="@/assets/img/lunette_commande-rouge.png" alt="image de lunette">
-        <RouterLink to="/personnalisation"><button class="font-montserrat bg-bleufonce text-white px-3 py-1 rounded-md">Personnaliser</button></RouterLink>
+        <RouterLink to="/personnalisation"><button class="font-montserrat bg-bleufonce hover:bg-bleu text-blanc px-3 py-1 rounded-md">Personnaliser</button></RouterLink>
       </div>
 
       <div class="font-montserrat bg-blanc p-12 w-120 text-center space-y-4">
         <img class="w-60 h-30" src="@/assets/img/lunette_commande-bleu.png" alt="image de lunette">
-        <RouterLink to="/personnalisation"><button class="font-montserrat bg-bleufonce text-white px-3 py-1 rounded-md">Personnaliser</button></RouterLink>
+        <RouterLink to="/personnalisation"><button class="font-montserrat bg-bleufonce hover:bg-bleu text-blanc px-3 py-1 rounded-md">Personnaliser</button></RouterLink>
       </div>
 
       <div class="font-montserrat bg-blanc p-12 w-120 text-center space-y-4">
         <img class="w-60 h-30" src="@/assets/img/lunette_commande-marron.png" alt="image de lunette">
-        <RouterLink to="/personnalisation"><button class="font-montserrat bg-bleufonce text-white px-3 py-1 rounded-md">Personnaliser</button></RouterLink>
+        <RouterLink to="/personnalisation"><button class="font-montserrat bg-bleufonce hover:bg-bleu text-blanc px-3 py-1 rounded-md">Personnaliser</button></RouterLink>
       </div>
     </div>
 

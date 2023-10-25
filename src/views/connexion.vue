@@ -1,128 +1,133 @@
 <template>
-    <form class="login-container flex flex-col items-center justify-center mt-16 mb-24" @submit.prevent="connect()">
-      <!-- Icône -->
-      <img src="@/assets/icone/icone-connexion.svg" alt="Icône de connexion" class="w-16 h-16 mb-4" />
-  
-      <!-- Section E-mail -->
-        <input type="email" id="email" placeholder="E-Mail" class="rounded-full px-10 py-2 border-2 mb-5 text-xl mt-5"/>
-  
-      <!-- Section Mot de passe -->
-        <input type="password" id="password" placeholder="Mot de passe"  class="rounded-full px-10 py-2 border-2 text-xl mt-5"/>
-  
-      <!-- Bouton "Se connecter" -->
-      <RouterLink to="/" ><button class="bg-[#3C6FAB] text-white font-montserrat login-button mt-6 rounded-full px-20 py-2 border-2 mt-5">Se connecter</button></RouterLink>
-  
-      <!-- Bouton "Se connecter avec Google" -->
-      <RouterLink to="/connexion-google" class="font-montserrat flex google-login-button mt-6 rounded-full px-6 py-2 border-2 mt-5">
-        <img class="w-4 h-4 mr-2 -ml-1 mt-1" src="../assets/icone/google-icon.svg" alt="icone google">
-        Se connecter avec Google
-      </RouterLink>
+  <div class="flex min-h-full items-center justify-center px-4 py-12 sm:px-6 lg:px-8 mb-20 mt-20">
+    <div class="w-full max-w-md space-y-8">
+      <div v-if="currentUser">
+        <div>
+          <button type="button" @click="doLogout"
+            class="font-montserrat rounded-md bg-bleu px-3 py-2 text-sm font-semibold text-blanc shadow-sm hover:bg-grey-400 hover:bg-bleufonce focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-grey-600 mt-4 mb-80">Déconnexion</button>
 
-      <!-- Bouton "Se connecter avec Github" -->
-      <RouterLink to="/connexion-google" class="font-montserrat flex google-login-button mt-6 rounded-full px-6 py-2 border-2 mt-5">
-        <img class="w-4 h-4 mr-2 -ml-1 mt-1" src="../assets/icone/github-icone.svg" alt="icone github">
-        Se connecter avec Github
-      </RouterLink>
-  
-      <!-- Texte "Vous n'avez pas de compte ?" -->
-      <p class="font-nunito text-gray-700 mt-6">Vous n'avez pas de compte ?</p>
-  
-      <!-- Texte "S'inscrire" -->
-      <RouterLink to="/inscription" class="font-nunito text-bleu register-link">S'inscrire</RouterLink>
-    </form>
-  </template>
+        </div>
+      </div>
+
+      <!-- connexion -->
+
+      <div v-else>
+        <img class="mx-auto" src="../assets/icone/icone-connexion.svg" alt="icone profil">
+        <div class="sm:col-span-2 sm:col-start-1 mt-4">
+          <label for="username" class="block text-sm font-medium leading-6 text-gray-900">E-mail</label>
+          <div class="mt-2">
+            <input v-model="username" type="text" name="username" id="username" autocomplete="none"
+              placeholder="Votre e-mail "
+              class=" px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+          </div>
+        </div>
+        <div class="sm:col-span-2 sm:col-start-1 mt-2">
+          <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Mot de passe</label>
+          <div class="mt-2">
+            <input v-model="password" type="password" name="password" id="password" autocomplete="none"
+              placeholder="Votre mot de passe"
+              class=" px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+          </div>
+        </div>
+        <div v-if="loginMode">
+          <div class="sm:col-span-2 sm:col-start-1 mt-2">
+            <button type="button" @click="doLogin"
+              class="w-40 font-montserrat mr-3 rounded-md bg-bleu px-3 py-2 text-sm font-semibold text-blanc shadow-sm hover:bg-bleufonce focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mt-4">Se connecter</button>
+              <button type="button"  @click="loginMode = false"
+              class="w-40 font-montserrat mr-3 rounded-md bg-bleu px-3 py-2 text-sm font-semibold text-blanc shadow-sm hover:bg-bleufonce focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mt-4">S'inscrire</button>
+              <button type="button" @click="doLogin"
+              class="w-30 font-montserrat mr-3 rounded-md bg-white border border-bleu px-5 py-2 text-sm font-semibold text-bleu shadow-sm hover:bg-bleu hover:text-blanc focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mt-4"> <img class="w-6 h-6 mr-2 -ml-1 mt-1" src="../assets/icone/google-icon.svg" alt="icone google"> Se connecter avec Google</button>
+              <button type="button" @click="doLogin"
+              class="w-30 font-montserrat mr-3 rounded-md bg-white border border-bleu px-5 py-2 text-sm font-semibold text-bleu shadow-sm hover:bg-bleu hover:text-blanc focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mt-4"> <img class="w-6 h-6 mr-2 -ml-1 mt-1" src="../assets/icone/github-icone.svg" alt="icone github"> Se connecter avec Github</button>
+          </div>
+        </div>
+
+        <!-- inscription -->
+
+        <div v-else>
+          <div class="sm:col-span-2 sm:col-start-1 mt-2">
+            <label for="fullName" class="block text-sm font-medium leading-6 text-gray-900">Pseudo</label>
+            <div class="mt-2">
+              <input v-model="fullName" type="text" name="fullName" id="fullName" autocomplete="none"
+                placeholder="Votre pseudo"
+                class=" px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            </div>
+          </div>
+          <div class="sm:col-span-2 sm:col-start-1 mt-2">
+            <button type="button" @click="doCreateAccount"
+              class="mr-3 rounded-md bg-bleu px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-bleufonce focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Créer un compte</button>
+
+            <button type="button" @click="loginMode = true"
+              class="rounded-md bg-bleu px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-bleufonce focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bleu">Annuler
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<!-- import vue -->
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 import PocketBase from 'pocketbase';
-    // PocketBase vps connexion
-      var pocketbase_ip=''
-        if(import.meta.env.MODE === 'production')
-      pocketbase_ip='https://TaVue.lucaschippaux.fr/'
-        else
-      pocketbase_ip='http://127.0.0.1:8090/'
 
-    const pb = new PocketBase(pocketbase_ip)
-    // Elt de connexion
-    let isConnected = ref(false)
-    let user =  ref('')
-    let password = ref('')
-    // User connecté
-    let currentUser = ref(null)
-    let avatar = ref(null)
+let pb = null;
+const currentUser = ref();
+const username = ref("");
+const password = ref("");
+const fullName = ref("");
 
-    var showInscription = ref(false)
+const loginMode = ref(true);
 
-    // Fonction de rafraichissement des données sur la page
-    const refresh = () => {
-        if(pb.authStore.isValid){
-        currentUser.value = pb.authStore.model
-        isConnected.value = true
+onMounted(async () => {
+  pb = new PocketBase('http://127.0.0.1:8090');
 
-        avatar.value = pocketbase_ip+"/api/files" //adresse serveur et du repertoire des fichiers img
-            +currentUser.value.collectionId
-            +"/"
-            +currentUser.value.id //Id de l'utilisateur connecté
-            +"/"
-            +currentUser.value.avatar //Nom du fichier avatar de l'utilisateur
-            +"?thumb=100x100"
-        }
-    }
+  pb.authStore.onChange(() => {
+    currentUser.value = pb.authStore.model
+  }, true)
 
-  onMounted(async () => {
-      refresh()
-  })
+});
 
-  // Fonction connexion
-  const connect = async() => {
-    try{
-      const authData = await pb.collection('users').authWithPassword(user.value, password.value)
-      refresh()
-    }catch(error){
-      alert("Erreur de connexion : mauvais login et/ou mot de passe")
-      user.value = ''
-      password.value = ''
-    }
+const doLogout = () => {
+  pb.authStore.clear();
+  currentUser.value = null;
+}
+
+const doLogin = async () => {
+  try {
+    const authData = await pb.collection('users')
+      .authWithPassword(username.value, password.value);
+
+    // after the above you can also access the auth data from the authStore
+    console.log(pb.authStore.isValid);
+    console.log(pb.authStore.token);
+    console.log(pb.authStore.model);
+    // currentUser.value = pb.authStore.model
+  } catch (error) {
+    alert(error.message)
   }
-  // Fonction déconnexion
-  const deconnect = ()=>{
-    pb.authStore.clear()
-    isConnected.value = false
-    avatar.value = null
-    // Retour à la page d'accueil -> Redirection
-    window.location.href = "/"
+}
+
+const doCreateAccount = async () => {
+  try {
+    const data = {
+      "username": `user_${self.crypto.randomUUID().split("-")[0]}`,
+      "email": username.value,
+      "emailVisibility": true,
+      "password": password.value,
+      "passwordConfirm": password.value,
+      "name": fullName.value
+    };
+
+    const record = await pb.collection('users').create(data);
+
+    await doLogin();
+  } catch (error) {
+    alert(error.message)
   }
-  // Fonction connexion avec Google
-  const googleLogin = async() => {
-    const authData = await pb.collection("users").authWithOAuth2({ provider: "google" });
-    if (pb.authStore.isValid) {
-      isConnected.value = true;
-      currentUser.value = pb.authStore.model;
-    }
-  }
-  // Fonction inscription
-  const register = async() => {
-    try {
-      currentUser = {
-        email:            document.getElementById("email").value,
-        password:         document.getElementById("password").value,
-        passwordConfirm:  document.getElementById("password").value,
-        username:         document.getElementById("nom").value,
-        name:             document.getElementById("prenom").value,
-      };
-      const records = await pb.collection("users").create(currentUser);
-      
-      await pb.collection("users").requestVerification(document.getElementById("email").value);
-      alert("Inscription réussie ! Un mail de vérification vous a été envoyé");
-      // Changement de page
-      showInscription.value = false;
-      // Actualisation des données et connexion
-      refresh()
-      isConnected.value = true;
-    }catch(error){
-      alert("Erreur lors de l'inscription. Vérifiez que votre adresse mail et votre mot de passe soient valides");
-    }
-  }
+}
+
 </script>
-
-  

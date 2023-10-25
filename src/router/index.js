@@ -3,7 +3,6 @@ import Index from '../views/index.vue'
 import Lunettes from '../views/lunettes.vue'
 import Personnalisation from '../views/personnalisation.vue'
 import Connexion from '../views/connexion.vue'
-import Inscription from '../views/inscription.vue'
 
 
 
@@ -20,7 +19,6 @@ const router = createRouter({
     { path: '/lunettes',              name: 'Lunettes',                component: Lunettes },
     { path: '/personnalisation',      name: 'Personnalisation',        component: Personnalisation },
     { path: '/connexion',             name: 'Connexion',               component: Connexion },
-    { path: '/inscription',             name: 'Inscription',           component: Inscription },
 
   ]
 })
