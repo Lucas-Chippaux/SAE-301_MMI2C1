@@ -36,9 +36,9 @@
               <button type="button"  @click="loginMode = false"
               class="w-40 font-montserrat mr-3 rounded-md bg-bleu px-3 py-2 text-sm font-semibold text-blanc shadow-sm hover:bg-bleufonce focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mt-4">S'inscrire</button>
               <button type="button" @click="doLogin"
-              class="w-30 font-montserrat mr-3 rounded-md bg-white border border-bleu px-5 py-2 text-sm font-semibold text-bleu shadow-sm hover:bg-bleu hover:text-blanc focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mt-4"> <img class="w-6 h-6 mr-2 -ml-1 mt-1" src="../assets/icone/google-icon.svg" alt="icone google"> Se connecter avec Google</button>
+              class="w-38 font-montserrat mr-3 rounded-md bg-white border border-bleu px-5 py-2 text-sm font-semibold text-bleu shadow-sm hover:bg-bleu hover:text-blanc focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mt-4"> <img class="w-6 h-6 mr-2 -ml-1 mt-1" src="../assets/icone/google-icon.svg" alt="icone google"> Se connecter avec Google</button>
               <button type="button" @click="doLogin"
-              class="w-30 font-montserrat mr-3 rounded-md bg-white border border-bleu px-5 py-2 text-sm font-semibold text-bleu shadow-sm hover:bg-bleu hover:text-blanc focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mt-4"> <img class="w-6 h-6 mr-2 -ml-1 mt-1" src="../assets/icone/github-icone.svg" alt="icone github"> Se connecter avec Github</button>
+              class="w-38 font-montserrat mr-3 rounded-md bg-white border border-bleu px-5 py-2 text-sm font-semibold text-bleu shadow-sm hover:bg-bleu hover:text-blanc focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mt-4"> <img class="w-6 h-6 mr-2 -ml-1 mt-1" src="../assets/icone/github-icone.svg" alt="icone github"> Se connecter avec Github</button>
           </div>
         </div>
 
