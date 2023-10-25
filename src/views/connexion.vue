@@ -68,7 +68,7 @@
   </div>
 </template>
 
-<!-- import vue -->
+<!-- import éléments vue -->
 
 <script setup>
 import { onMounted, ref } from 'vue';
